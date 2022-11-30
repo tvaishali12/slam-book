@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img
+      src="https://d33wubrfki0l68.cloudfront.net/0a619155c82b694e2267f3ed5c752919b707e33b/ef36f/static/svg_waves-3c1f0a785319462f6dce04d227eaf664.jpg"
+      alt=""
+    />
+    <div id="parent">
+      <div id="child">
+        <div class="header">
+          <div class="heading">
+            <h2>SlamBook</h2>
+          </div>
+          <div class="logoImg">
+            <img class="logo" src="images/Slambook.png" alt="slambook-logo" />
+          </div>
+        </div>
+        <div class="parentofL-R">
+          <div class="leftside">
+            <img class="leftimg" src="images/profile.jpg" alt="" />
+            <!-- <div class="profile-pic-div">
+              <img id="leftimg" src="images/profile.jpg" alt="" />
+              <input type="file" id="file" />
+              <label for="file" id="uploadBtn">Choose Photo</label> -->
+            <!-- </div> -->
+            <div class="sendbutton">
+              <button id="sendBtn">Send</button>
+            </div>
+            <div class="addbutton">
+              <button id="addbtn" onclick="addNewquestion()">
+                add question
+              </button>
+            </div>
+          </div>
+          <div class="rightside">
+            <div class="askques">
+              <div class="darkBlue"></div>
+              <div class="inputdiv1">
+                <input id="titleInput" placeholder="Title" type="text" />
+              </div>
+            </div>
+            <div id="question-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="para"></p>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

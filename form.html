@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <form id="formDiv" action=""></form>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Form Submitted Successfully</p>
+      </div>
+    </div>
+  </body>
+  <script>
+    let myDAta = JSON.parse(localStorage.getItem("allEntries"));
+    // console.log(JSON.parse(localStorage.getItem("allEntries")).length);
+
+    const blueDiv = document.createElement("div");
+    blueDiv.id = "blueDiv";
+
+    const titleDiv = document.createElement("div");
+    titleDiv.id = "titleDiv";
+
+    const title = document.createElement("div");
+    title.id = "formTitle";
+
+    formDiv.appendChild(blueDiv);
+
+    titleDiv.appendChild(title);
+    formDiv.appendChild(titleDiv);
+
+    for (
+      let i = 0;
+      i < JSON.parse(localStorage.getItem("allEntries")).length;
+      i++
+    ) {
+      const getQues = document.createElement("div");
+      getQues.id = "getQues";
+
+      const givenQues = document.createElement("div");
+      givenQues.id = "givenQues";
+      givenQues.innerText = myDAta[i].questions;
+
+      title.innerText = myDAta[i].title;
+      // console.log(myDAta[i].questions);
+      // console.log(localStorage.getItem("allEntries")[0].questions);
+
+      var giveAns = document.createElement("input");
+      giveAns.id = "giveAns";
+      giveAns.placeholder = myDAta[i].ans;
+      giveAns.required;
+
+      getQues.appendChild(givenQues);
+      getQues.appendChild(giveAns);
+      formDiv.appendChild(getQues);
+    }
+
+    const bottomDiv = document.createElement("div");
+    bottomDiv.id = "bottomDiv";
+    const btn = document.createElement("button");
+    btn.id = "btn";
+    btn.innerText = "Sumbit";
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      var modal = document.getElementById("myModal");
+      modal.style.display = "block";
+
+      var span = document.getElementsByClassName("close")[0];
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    });
+
+    const clearForm = document.createElement("button");
+    clearForm.id = "clearForm";
+    clearForm.innerText = "clear form";
+
+    clearForm.addEventListener("click", function () {
+      document.getElementById("formDiv").reset();
+    });
+
+    bottomDiv.appendChild(btn);
+    bottomDiv.appendChild(clearForm);
+    formDiv.appendChild(bottomDiv);
+  </script>
+</html>
