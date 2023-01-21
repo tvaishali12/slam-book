@@ -167,7 +167,7 @@ document.getElementById("sendBtn").addEventListener("click", function (e) {
     var modal = document.getElementById("myModal");
     modal.style.display = "block";
 
-    var url = `http://127.0.0.1:5500/form.html?id = ${(Date.now())}`
+    var url = `http://127.0.0.1:5500/Slam-Book/form.html?id= ${(Date.now())}`
     console.log("date", Date.now())
 
     document.getElementById("para").innerText = url
